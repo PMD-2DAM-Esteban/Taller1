@@ -1,5 +1,6 @@
 package pmdm.esteban.taller1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -17,8 +18,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         setUi();
+
+        if (savedInstanceState!=null) {
+
+            String textoContador= savedInstanceState.getString("contador");
+            CharSequence cs= textoContador;
+            tvDisplay.setText(cs);
+
+        }
     }
 
     //TODO: Función SetUI, obtener los elementos a utilizar
@@ -66,5 +76,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         tvDisplay.setText(getString(R.string.number_of_elements)+ ": "+cont);
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        String texto= (String) tvDisplay.getText();
+        savedInstanceState.putString("contador", texto);
+
     }
 }
