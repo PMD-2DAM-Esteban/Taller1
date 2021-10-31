@@ -17,7 +17,7 @@ private MediaPlayer sonido;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         //Bloquea la orientacion de pantalla a solo PORTRAIT no LAND
-
+    //Todo:Funcion time/Thread del Splash
 
         Thread time = new Thread(){
             @Override

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_main);
         setUi();
-
+        //TODO: Si hay instancia guardada obtiene el texto y lo añade de nuevo
         if (savedInstanceState!=null) {
 
             String textoContador= savedInstanceState.getString("contador");
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tvDisplay.setText(getString(R.string.number_of_elements)+ ": "+cont);
     }
-
+    //TODO: Fucion onSaveInstance
     @Override
     protected void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
